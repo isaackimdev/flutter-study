@@ -18,4 +18,8 @@ main() {
   list3.add(40);
   print(list3);
 
+  // Map
+  Map<String, String> map = {'one':'hello','two':'world'};
+  print('${map['one']}, ${map['two']}');
+
 }
