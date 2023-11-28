@@ -39,6 +39,59 @@ class MyAppState extends State<MyApp> {
               ),
             ),
           ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('resources/images/big.jpeg'),
+                fit: BoxFit.fill,
+              )
+            ),
+          ),
+          title: Text('AppBar Title'),
+          actions: [
+            IconButton(onPressed: (){}, icon: const Icon(Icons.add_alarm),),
+            IconButton(onPressed: (){}, icon: const Icon(Icons.phone),),
+          ],
+        ),
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+          child: const Icon(Icons.add),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.shifting,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'First', backgroundColor: Colors.green),
+            BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Second', backgroundColor: Colors.red),
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Third', backgroundColor: Colors.purple),
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'Fourth', backgroundColor: Colors.pink),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('item 1'),
+                onTap: (){},
+              ),
+              ListTile(
+                title: Text('item 2'),
+                onTap: (){},
+              ),
+            ],
+          ),
         ),
       )
     );
