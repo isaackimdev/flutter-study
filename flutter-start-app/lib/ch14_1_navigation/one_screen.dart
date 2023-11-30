@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'user.dart';
 
 class OneScreen extends StatelessWidget {
   @override
@@ -16,8 +17,17 @@ class OneScreen extends StatelessWidget {
               children: [
                 Text('OneScreen', style: TextStyle(color: Colors.white, fontSize: 30),),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/two');
+                  onPressed: () async {
+                    final result = await Navigator.pushNamed(
+                        context,
+                        '/two',
+                        arguments: {
+                          "arg1" : 10,
+                          "arg2" : "hello",
+                          "arg3" : User('kim', 'seoul'),
+                        }
+                    );
+                    print('result : ${(result as User).name}');
                   },
                   child: Text('Go Two'),
                 ),
