@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+main() {
   runApp(MyApp());
 }
 
@@ -18,11 +16,7 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: [
               ElevatedButton(
-                  onPressed: () async {
-                    final cameras = await availableCameras();
-                    final firstCamera = cameras.first;
-                    print(firstCamera);
-                  },
+                  onPressed: () {},
                   child: Text("사진 찍기(카메라)"),
               ),
               ElevatedButton(
