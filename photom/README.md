@@ -19,6 +19,10 @@ samples, guidance on mobile development, and a full API reference.
 
 두 단어 이상의 결합된 dart 파일의 이름은 언더바(_) 기호로 결합한다. ex) one_screen.dart
 
-references :
-
+### references
 - [flutter camera](https://docs.flutter.dev/cookbook/plugins/picture-using-camera)
+
+### android deploy 명령어
+`$ flutter build apk --release --target-platform=android-arm64`
+
+release app path : `/build/app/outputs/apk/release/app-release.apk`
